@@ -18,3 +18,12 @@ echo '  done' >> skrypt.sh
 echo 'elif [[ $1 == "--init" ]]; then' >> skrypt.sh
 echo '  git clone https://github.com/username/reponame.git' >> skrypt.sh
 echo '  export PATH=$PATH:$(pwd)/reponame' >> skrypt.sh
+echo 'elif [[ $1 == "--error" || $1 == "-e" ]]; then' >> skrypt.sh
+echo '  num=${2:-100}' >> skrypt.sh
+echo '  for ((i=1; i<=num; i++)); do' >> skrypt.sh
+echo '    mkdir -p error${i}' >> skrypt.sh
+echo '    filename="error${i}/error${i}.txt"' >> skrypt.sh
+echo '    echo "Filename: $filename" > $filename' >> skrypt.sh
+echo '    echo "Script: skrypt.sh" >> $filename' >> skrypt.sh
+echo '    date >> $filename' >> skrypt.sh
+echo '  done' >> skrypt.sh
