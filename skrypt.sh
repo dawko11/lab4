@@ -15,3 +15,6 @@ echo '    echo "Filename: $filename" > $filename' >> skrypt.sh
 echo '    echo "Script: skrypt.sh" >> $filename' >> skrypt.sh
 echo '    date >> $filename' >> skrypt.sh
 echo '  done' >> skrypt.sh
+echo 'elif [[ $1 == "--init" ]]; then' >> skrypt.sh
+echo '  git clone https://github.com/username/reponame.git' >> skrypt.sh
+echo '  export PATH=$PATH:$(pwd)/reponame' >> skrypt.sh
